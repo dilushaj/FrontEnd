@@ -31,17 +31,13 @@ export interface NavData {
 
 export const navItems: NavData[] = [
   {
-    name: 'Dashboard',
+    name: 'Home',
     url: '/dashboard',
-    icon: 'icon-speedometer',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
+    icon: 'icon-home',
   },
   {
     title: true,
-    name: 'Theme'
+    name: 'Data Pre-processing'
   },
   {
     name: 'Colors',
@@ -55,7 +51,7 @@ export const navItems: NavData[] = [
   },
   {
     title: true,
-    name: 'Components'
+    name: 'Phylogenetic Inference'
   },
   {
     name: 'Base',
@@ -245,30 +241,5 @@ export const navItems: NavData[] = [
         icon: 'icon-star'
       }
     ]
-  },
-  {
-    name: 'Disabled',
-    url: '/dashboard',
-    icon: 'icon-ban',
-    badge: {
-      variant: 'secondary',
-      text: 'NEW'
-    },
-    attributes: { disabled: true },
-  },
-  {
-    name: 'Download CoreUI',
-    url: 'http://coreui.io/angular/',
-    icon: 'icon-cloud-download',
-    class: 'mt-auto',
-    variant: 'success',
-    attributes: { target: '_blank', rel: 'noopener' }
-  },
-  {
-    name: 'Try CoreUI PRO',
-    url: 'http://coreui.io/pro/angular/',
-    icon: 'icon-layers',
-    variant: 'danger',
-    attributes: { target: '_blank', rel: 'noopener' }
   }
 ];
