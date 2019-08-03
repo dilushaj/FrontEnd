@@ -19,7 +19,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build --prod --aot --buildOptimizer --commonChunk --vendorChunk --optimization --progress",
     "test": "ng test",
     "lint": "ng lint",
@@ -52,6 +52,7 @@
     "ngx-perfect-scrollbar": "^7.2.1",
     "rxjs": "^6.4.0",
     "simple-line-icons": "^2.4.1",
+    "socket.io": "^1.7.3",
     "ts-helpers": "^1.1.2",
     "tsickle": "^0.34.3",
     "tslib": "^1.9.0",

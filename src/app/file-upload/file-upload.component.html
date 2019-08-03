@@ -9,9 +9,45 @@
         </p>
       </div>
       <div class="card-footer">
-        <button type="button" class="btn btn-primary btn-dark">
-          Upload FASTA File
-        </button>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <label for="file">Choose File</label>
+          <input type="file" name="data" (change)="handleFileInput($event.target.files)" />
+          <button type="submit">Upload FASTA File</button>
+          <!--<button type="button" class="btn btn-primary btn-dark" 
+          (change)="handleFileInput($event.target.files)">
+            Upload FASTA File
+          </button><br><br> -->
+
+          <div>
+              <div *ngIf="error">
+                {{ error.message }}
+              </div>
+              <div *ngIf="uploadResponse.status === 'error'">
+                {{ uploadResponse.message }}
+              </div>
+              <div *ngIf="uploadResponse.status === 'progress'">
+                  <div class="progress md-progress" style="height: 12px;">
+                    <div class="progress-bar bg-success" role="progressbar" ng-show= "True"
+                    [style.width.%]="uploadResponse.message" 
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                      {{uploadResponse.message}}%
+                    </div>
+                    <br><br>
+                  </div>
+              </div>
+          </div>
+        </form>
+        <div *ngIf = "uploadResponse.message === 100">
+          Dataset Upload Complete
+        </div>
       </div>
+
+        <!----<div class="progress md-progress" style="height: 8px;">
+          <div class="progress-bar bg-success" role="progressbar" 
+          [style.width]="myProgress | percent" aria-valuenow="100" 
+          aria-valuemin="0" aria-valuemax="100">
+          </div>
+        </div>-->
+      
     </div>
   </div>
