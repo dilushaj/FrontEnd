@@ -8,46 +8,62 @@
           Click the button below to upload your DNA or Protein Dataset in FASTA format for Preprocessing. 
         </p>
       </div>
+
       <div class="card-footer">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <label for="file">Choose File</label>
           <input type="file" name="data" (change)="handleFileInput($event.target.files)" />
           <button type="submit">Upload FASTA File</button>
-          <!--<button type="button" class="btn btn-primary btn-dark" 
-          (change)="handleFileInput($event.target.files)">
-            Upload FASTA File
-          </button><br><br> -->
 
+          <!--uploading file-->
           <div>
-              <div *ngIf="error">
-                {{ error.message }}
-              </div>
-              <div *ngIf="uploadResponse.status === 'error'">
-                {{ uploadResponse.message }}
-              </div>
-              <div *ngIf="uploadResponse.status === 'progress'">
-                  <div class="progress md-progress" style="height: 12px;">
-                    <div class="progress-bar bg-success" role="progressbar" ng-show= "True"
-                    [style.width.%]="uploadResponse.message" 
-                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                      {{uploadResponse.message}}%
-                    </div>
-                    <br><br>
+            <div *ngIf="error">
+              {{ error.message }}
+            </div>
+            <div *ngIf="uploadResponse.status === 'error'">
+              {{ uploadResponse.message }}
+            </div>
+            <div *ngIf="uploadResponse.status === 'progress'">
+                <div class="progress md-progress" style="height: 12px;">
+                  <div class="progress-bar bg-success" role="progressbar" ng-show= "True"
+                  [style.width.%]="uploadResponse.message" 
+                  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                    {{uploadResponse.message}}%
                   </div>
+                  <br><br>
+                </div>
+            </div>
+            <!--Success message for file upload-->
+            <div *ngIf="uploadResponse.status==='Created'">
+              <span>Dataset Upload Completed Successfully</span>
+            </div>
+        </div>
+
+        <!--recommending file-->
+        <div>
+          <div *ngIf="error">
+            {{ error.message }}
+          </div>
+          <div *ngIf="recommendResponse.status === 'error'">
+            {{ recommendResponse.message }}
+          </div>
+          <div *ngIf="recommendResponse.status === 'progress'">
+              <div class="progress md-progress" style="height: 12px;">
+                <div class="progress-bar bg-success" role="progressbar" ng-show= "True"
+                [style.width.%]="uploadResponse.message" 
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                  {{recommendResponse.message}}%
+                </div>
+                <br><br>
               </div>
           </div>
-        </form>
-        <div *ngIf = "uploadResponse.message === 100">
-          Dataset Upload Complete
-        </div>
-      </div>
-
-        <!----<div class="progress md-progress" style="height: 8px;">
-          <div class="progress-bar bg-success" role="progressbar" 
-          [style.width]="myProgress | percent" aria-valuenow="100" 
-          aria-valuemin="0" aria-valuemax="100">
+          <!--Display recommended algorithms-->
+          <div *ngIf="recommendResponse.status==='Created'">
+            <span>Recommended Algorithms:</span>
+            <strong>{{recommendResponse.algorithms}}</strong>
           </div>
-        </div>-->
-      
+        </div>
+      </form>
+      </div>      
     </div>
   </div>
