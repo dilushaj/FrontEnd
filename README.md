@@ -1,4 +1,4 @@
 # 
 PhyloGenie: Front End Application
-Languages: Angular 6 with Typescript 
+Languages: Angular 7 with Typescript 
 Theme: Core-UI 4
