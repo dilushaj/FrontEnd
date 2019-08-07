@@ -2,16 +2,35 @@
   <div class="row justify-content-center"> 
     <div class="card">
         <div class="card-header">
-          Phylogenetic Inference and Visualization  Online 
-          <small> with GPU accelaeration </small>
+          Phylogenetic Inference and Visualization Online with GPU Acceleration 
         </div>
         <div class="card-body"> 
-          <carousel>
+          <carousel [interval]="4500">
             <slide>
-              <img src="../../../assets/img/plant_cropped.png" alt="First slide" 
-              style="display: block; width: 100%;">
+              <img src="../../../assets/img/blueDnaFaded.jpg" alt="First slide" 
+              style="display: block; width: 900px; height:400px;">
               <div class="carousel-caption d-none d-md-block">
-                <h2>Phylogenetic Inference</h2>
+                <h2><strong> 
+                  Inference Algorithm Recommendation for Custom Datasets
+                </strong></h2>
+              </div>
+            </slide>
+            <slide>
+              <img src="../../../assets/img/eScienceFaded.jpg" alt="First slide" 
+              style="display: block; width: 900px; height:400px;">
+              <div class="carousel-caption d-none d-md-block">
+                <h2><strong>
+                  Phylogenetic Inference with High Efficiency by GPU Accelaeration
+                </strong></h2>
+              </div>
+            </slide>
+            <slide>
+              <img src="../../../assets/img/treePicFaded.jpg" alt="First slide" 
+              style="display: block; width: 900px; height:400px;">
+              <div class="carousel-caption d-none d-md-block">
+                <h2><strong>
+                  Numerous Layout Techniques for Tree Visualization 
+                </strong></h2>
               </div>
             </slide>
           </carousel>
@@ -19,7 +38,7 @@
           <div class="card-footer"> 
             <div class= "row justify-content-center">
               <button class="btn btn-lg btn-primary btn-dark" 
-              type="button">Get Started</button>
+              type="button" routerLink="../upload-file">Get Started</button>
             </div> 
           </div>
     </div>

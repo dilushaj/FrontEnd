@@ -6,6 +6,7 @@ import { DefaultLayoutComponent } from './containers';
 
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 export const routes: Routes = [
   {
@@ -34,6 +35,13 @@ export const routes: Routes = [
       title: 'Home'
     },
     children: [
+      {
+        path: 'upload-file',
+        component: FileUploadComponent,
+        data: {
+          title: 'Upload Dataset File'
+        }
+      },
       {
         path: 'base',
         loadChildren: './views/base/base.module#BaseModule'
