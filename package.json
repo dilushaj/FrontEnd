@@ -50,6 +50,7 @@
     "ng2-charts": "^1.6.0",
     "ngx-bootstrap": "^3.2.0",
     "ngx-perfect-scrollbar": "^7.2.1",
+    "ngx-spinner": "^8.0.3",
     "rxjs": "^6.4.0",
     "simple-line-icons": "^2.4.1",
     "socket.io": "^1.7.3",

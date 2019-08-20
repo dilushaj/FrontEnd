@@ -39,8 +39,10 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { NgxSpinnerModule } from "ngx-spinner";
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FileUploadService } from './file-upload.service';
+import { PreprocessorComponent } from './preprocessor/preprocessor.component';
 
 @NgModule({
   imports: [
@@ -56,14 +58,16 @@ import { FileUploadService } from './file-upload.service';
     TabsModule.forRoot(),
     ChartsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
   declarations: [
     AppComponent,
     ...APP_CONTAINERS,
     P404Component,
     P500Component,
-    FileUploadComponent
+    FileUploadComponent,
+    PreprocessorComponent
   ],
   providers: [{
     provide: LocationStrategy,
