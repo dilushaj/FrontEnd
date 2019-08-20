@@ -17,7 +17,6 @@ export class FileUploadComponent implements OnInit {
   //constructor 
   constructor(private formBuilder: FormBuilder, fileUploadService:FileUploadService) { 
     this.fileUploadService = fileUploadService;
-    
   }
 
   ngOnInit() {

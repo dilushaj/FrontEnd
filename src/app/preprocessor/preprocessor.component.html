@@ -1,0 +1,50 @@
+<div class="animated fadeIn">
+    <div class="card">
+      <div class="card-header">
+        Preprocess File
+      </div>
+      <div class="card-body">
+        <p>
+          Click the button below to preprocess your dataset and 
+          perform multiple sequence alignment.
+        </p>
+      </div>
+
+      <div class="card-footer">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <label for="file">Choose File</label>
+          <input type="file" name="data" (change)="handleFileInput($event.target.files)" />
+          <button type="submit">Preprocess FASTA File</button>
+          <br><ngx-spinner></ngx-spinner>
+
+          <!--uploading file-->
+          <div>
+            <div *ngIf="error">
+              {{ error.message }}
+            </div>
+            <div *ngIf="response.status === 'error'">
+              {{ response.message }}
+            </div>
+            <div *ngIf="response.status === 'progress'">
+                <div class="progress md-progress" style="height: 12px;">
+                  <div class="progress-bar bg-success" role="progressbar" ng-show= "True"
+                  [style.width.%]="response.message" 
+                  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                    {{response.message}}%
+                  </div>
+                  <br><br>
+                </div>
+            </div>
+            <!--Success message for file upload-->
+            <div *ngIf="response.status==='OK'">
+              <span>Dataset cleaning process completed successfully.</span><br>
+              <span>Time taken for cleaning process: {{response.data_clean_time}}</span><br>
+              <span>Dataset alignment process completed successfully.</span><br>
+              <span>Time taken for cleaning process:  {{response.alignment_time}}</span>
+            </div>
+        </div>
+      </form>
+      </div>      
+    </div>
+  </div>
+
